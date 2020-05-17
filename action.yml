@@ -1,13 +1,21 @@
-name: 'Wait'
-description: 'Wait a designated number of milliseconds'
+name: split-by
+author: Rishabh Gupta
+description: Split the string by the given string
 inputs:
-  milliseconds:  # id of input
-    description: 'number of milliseconds to wait'
+  string:
+    description: "String to split"
     required: true
-    default: '1000'
+    default: ""
+  split-by:
+    description: "String to split by"
+    required: true
+    default: ""
 outputs:
-  time: # output will be available to future steps 
-    description: 'The message to output'
+  value:
+    description: "Array of strings"
 runs:
-  using: 'node12'
-  main: 'dist/index.js'
+  using: node12
+  main: "dist/index.js"
+branding:
+  icon: "zap-off"
+  color: "gray-dark"
