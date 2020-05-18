@@ -5,10 +5,13 @@ function run() {
     const stringValue = core.getInput('string');
     const splitBy = core.getInput('split-by');
     const value = stringValue.split(splitBy);
-    core.setOutput("value", value);
+    value.forEach((el, index) => {
+      core.setOutput(`_${index}`, el);
+    });
   } catch (err) {
     core.setFailed(err.message);
   }
+
 }
 
 run()
